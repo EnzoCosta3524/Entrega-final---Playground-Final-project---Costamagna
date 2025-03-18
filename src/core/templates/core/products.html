@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+{% for producto in productos %}
+<h2>Producto:{{producto.nombre}} ${{producto.precio}}</h2>
+<h3>Descripción:{{producto.descripcion}}</h3>
+
+{% endfor %}
+{% endblock content %}

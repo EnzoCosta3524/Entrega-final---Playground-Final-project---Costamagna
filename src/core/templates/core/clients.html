@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+{% for cliente in clientes %}
+<h2>Cliente:{{cliente.nombre}} {{cliente.apellido}}</h2>
+<h3>País:{{cliente.cliente_pais}}</h3>
+{% endfor %}
+{% endblock content %}
