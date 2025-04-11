@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Productos</title>
+{% endblock title %}
+
+{% block content %}
+<h1>¿Queres agregar una película?</h1>
+<h3><button><a href="{% url 'core:create_movies' %}">Agregar Película</a></button></h3>
+{% for o in obj %}
+<span>--------------------------------------------------------------------------</span>
+<h2>{{o.nombre}} ({{o.año}}) |⭐{{o.puntaje}}</h2>
+<h3>Genero: {{o.genero}}</h3>
+<h3>Director: {{o.director}}</h3>
+<h3>Duración: {{o.duracion}}</h3>
+<h4>Descripción:{{o.descripcion}}</h4>
+
+{% endfor %}
+{% endblock content %}

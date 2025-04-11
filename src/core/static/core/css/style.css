@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1f1f1f;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #222;
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+.search-bar input::placeholder {
+  color: #555;
+}
+
+.search-bar button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #b00610;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-card h2 {
+  margin: 0.5rem 0;
+}
+
+.movie-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Formulario general */
+form {
+  background-color: #1c1c1c;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 2rem auto;
+  color: #f4f4f4;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+form input[type="submit"] {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #b00610;
+}
+
+
+.about-me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.about-me-container img {
+  max-width: 350px;
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-me-container img:hover {
+  transform: scale(1.03);
+}
+
+.about-me-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-me-container h2 {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+}
+

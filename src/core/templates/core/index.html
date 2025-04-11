@@ -1,8 +1,32 @@
 {% extends 'core/base.html' %}
+{% load static %}
+
 {% block title %}
-    <title>Menu</title>
+    <title>Recomendador de Películas</title>
 {% endblock title %}
 
 {% block content %}
-    <h1>Hola mi nombre es {{nombre}} y esta es mi primer página en Django!</h1>
+    <h1>Tus peliculas favoritas:</h1>
+    <p>Descubre tu próxima película favorita</p>
+  <section class="search-bar">
+    <input type="text" placeholder="Buscar por título, género, etc..." />
+    <button>Buscar</button>
+  </section>
+  <section class="movie-list">
+
+    {% for o in obj %}
+    <div class="movie-card">
+      <a href="{% url 'core:read_movies' o.id %}">
+      {% if o.poster %}
+        <img src="{{ o.poster.url }}" alt="Poster">
+      {% else %}
+        <p>No hay imagen disponible.</p>
+      {% endif %}
+
+      <h2>{{o.nombre}}</h2>
+      <p>{{o.año}} |⭐ {{o.puntaje}} | {{o.genero}}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </section>
 {% endblock content %}

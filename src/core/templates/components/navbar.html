@@ -1,12 +1,12 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="">Enzo Costamagna</a>
+        <a class="navbar-brand" href="{% url 'core:about_me' %}">Enzo Costamagna</a>
       </div>
       <ul class="nav navbar-nav">
         <li class=""><a href="{% url 'core:index' %}">Home</a></li>
-        <li class=""><a href="{% url 'core:clients' %}">Clientes</a></li>
-        <li class=""><a href="{% url 'core:products' %}">Productos</a></li>
+        <li class=""><a href="{% url 'core:movies' %}">Todas las peliculas</a></li>
+        <li class=""><a href="{% url 'core:register' %}">Registrar</a></li>
       </ul>
     </div>
   </nav>

@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Enzo Costamagna</title>
+{% endblock title %}
+
+{% block content %}
+  <section class="about-me-container">
+    <img src="{% static 'core/imgs/about_me.png' %}" alt="Enzo Costamagna">
+    <h1>Hola,</h1>
+    <h2>
+      Mi nombre, como ya habrán visto, es Enzo Costamagna. Soy argentino y tengo 19 años.
+      Actualmente trabajo como field support y cada día busco aprender un poco más. Hice el curso de Coder principalmente porque quería estructurar y consolidar mis conocimientos en Python, además de expandirlos.
+      <br><br>
+      Genuinamente, termino el curso muy conforme, aprendí cosas que jamás imaginé estar haciendo. Antes, cuando escuchaba hablar de frameworks, me parecía algo lejano, difícil de comprender. Hoy, en cambio, estoy desarrollando una página con Django, algo que personalmente me enorgullece mucho.
+    </h2>
+  </section>
+{% endblock content %}
