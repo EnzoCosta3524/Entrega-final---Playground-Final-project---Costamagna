@@ -44,7 +44,7 @@ cd src
 #Nos posicionamos en la ruta raíz para poder ejecutar el siguente comando.
 
 python manage.py runserver 
-# Con este comando iniciamos la página.
+# Con este comando iniciamos el servidor web.
 ```
 
 ### 4. Acceder al panel de administración
@@ -59,4 +59,8 @@ localhost/admin
 --- 
 
 ## Futuras Actualizaciones
-Mañana agrego el login y el logout y además voy a subir un video explicativo.
+La interfaz aún tiene mucho que mejorar cosas como la vista de "cerrar sesion" o los inputs de los formularios que se ven en blanco. La próxima actualización se centrará en arreglar errores visuales hacer más accesible la edición de otros modelos.
+
+---
+## Link de video informativo
+https://youtu.be/aNKwbeo6U2U

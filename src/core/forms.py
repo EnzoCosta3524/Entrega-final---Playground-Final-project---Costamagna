@@ -1,6 +1,6 @@
 from django import forms
 from .models import Pelicula
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 class PeliculaForm (forms.ModelForm):
@@ -9,7 +9,11 @@ class PeliculaForm (forms.ModelForm):
         fields = '__all__'
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField()
     class Meta:
         model = User
         fields = ["username", "password1"]
+
+class LoginForm(AuthenticationForm):
+    class Meta:
+        model = AuthenticationForm
+        fields = ["username", "password"]

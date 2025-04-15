@@ -1,24 +1,46 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth import login,logout
 from .models import Pelicula
-from .forms import PeliculaForm, RegisterForm
+from .forms import PeliculaForm, RegisterForm, LoginForm
 
 def index(request):
-    obj = Pelicula.objects.all()
+    search = request.GET.get("search")
+    if search:
+        obj = Pelicula.objects.filter(nombre__istartswith=search)
+    else:
+        obj = Pelicula.objects.all()
     nombre = {"obj":obj}
     return render (request, "core/index.html", context=nombre)
 
 def about_me(request):
     return render (request, "core/about_me.html")
 
-def register(response):
-    if response.method == "POST":
-        form = RegisterForm(response.POST)
+def register(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("/")
     else:
         form = RegisterForm()
-    return render(response, "core/register.html", {"form":form})
+    return render(request, "core/register.html", {"form":form})
+
+def log_in(request):
+    if request.method == "POST":
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            return redirect("/")
+    else:
+        form = LoginForm()
+    context = {'form': form}
+    return render(request, "core/login.html", context=context)
+
+def log_out(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect("/")
+
 
 # Lista de todas las películas
 def movies(request):

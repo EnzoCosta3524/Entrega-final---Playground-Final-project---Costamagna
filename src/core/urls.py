@@ -8,8 +8,10 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('sobre/mi', views.about_me, name='about_me'),
-    path('registrar', views.register, name='register'),
+    path('sobre/mi/', views.about_me, name='about_me'),
+    path('registrar/', views.register, name='register'),
+    path('iniciar/sesion/', views.log_in, name='login'),
+    path('cerrar/sesion/', views.log_out, name='logout'),
     path('lista/de/peliculas/', views.movies, name='movies'),
     path('crear/pelicula/', views.create_movies, name='create_movies'),
     path('pelicula/<int:id>', views.read_movies, name='read_movies'),
